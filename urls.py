@@ -1,5 +1,7 @@
-from django.contrib.auth import views as auth_views
+from django.urls import path
+from .views import MaterialLoginView
 
 urlpatterns = [
-    path('login/', auth_views.LoginView.as_view(template_name='login.html', authentication_form=forms.AuthenticationForm), name='login'),
+    path('login/', MaterialLoginView.as_view(), name='login'),
+    # outras rotas aqui
 ]
